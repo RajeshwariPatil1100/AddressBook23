@@ -37,23 +37,29 @@ namespace AddressBook23
                 add.CreateContact(FirstName, LastName, Address, City, State, Email, Zip, PhoneNum);
                 Contact--;
             }
-            AddressBook ab = new AddressBook("Rajeshwari", "Patil", "mumbai", "Mumbai", "Maharashtra", "Rajeshwari@11.com", 400023, 9632587412);
-            ab.DisplayContacts();
-
-             void DisplayContacts(AddressBook[] ContactArray, int n)
+            Console.WriteLine("Do YOu Want To MOdify(Y/N)");
+            char ch = Convert.ToChar(Console.ReadLine());
+            if (ch == 'Y' || ch == 'y')
             {
-                for (int i = 0; i < n; i++)
-                {
-                    Console.WriteLine("Name {0} {1}", ContactArray[i].FirstName, ContactArray[i].LastName);
-                    Console.WriteLine("Address : {0}", ContactArray[i].Address);
-                    Console.WriteLine("City :{0}", ContactArray[i].City);
-                    Console.WriteLine("State : {0}", ContactArray[i].State);
-                    Console.WriteLine("Email :{0}", ContactArray[i].Email);
-                    Console.WriteLine("Zip :{0}", ContactArray[i].Zip);
-                    Console.WriteLine("Phone :{0}", ContactArray[i].PhoneNum);
-                }
+                add.EditContact();
+            }
+
+            //AddressBook ab = new AddressBook("Rajeshwari", "Patil", "mumbai", "Mumbai", "Maharashtra", "Rajeshwari@11.com", 400023, 9632587412);
+            //ab.DisplayContacts();
+        }
+        public void DisplayContacts(AddressBook[] ContactArray, int n)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine("Name {0} {1}", ContactArray[i].FirstName, ContactArray[i].LastName);
+                Console.WriteLine("Address : {0}", ContactArray[i].Address);
+                Console.WriteLine("City :{0}", ContactArray[i].City);
+                Console.WriteLine("State : {0}", ContactArray[i].State);
+                Console.WriteLine("Email :{0}", ContactArray[i].Email);
+                Console.WriteLine("Zip :{0}", ContactArray[i].Zip);
+                Console.WriteLine("Phone :{0}", ContactArray[i].PhoneNum);
             }
         }
-        
+
     }
 }
