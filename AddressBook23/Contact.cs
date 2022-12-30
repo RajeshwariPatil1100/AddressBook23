@@ -39,5 +39,6 @@ namespace AddressBook23
                 return FirstName.Equals(contact.FirstName) && LastName.Equals(contact.LastName);
             }
         }
+
     }
 }

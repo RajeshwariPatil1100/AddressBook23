@@ -131,6 +131,5 @@ namespace AddressBook23
                 }
             } while (choice != 0);
         }
-
     }
 }
