@@ -194,6 +194,18 @@ namespace AddressBook23
             }
         }
 
+        public void GetPersonCountByCity(string city, string bookName)
+        {
+            int count = addressBookDic[bookName].addressbook.Values.Where(c => c.City == city).Count();
+            Console.WriteLine("Number of contacts in city " + city + ": " + count);
+        }
+
+        public void GetPersonCountByState(string state, string bookName)
+        {
+            int count = addressBookDic[bookName].addressbook.Values.Where(c => c.State == state).Count();
+            Console.WriteLine("Number of contacts in state " + state + ": " + count);
+        }
+
     }
 }
 

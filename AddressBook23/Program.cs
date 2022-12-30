@@ -128,6 +128,25 @@ namespace AddressBook23
                         }
                         break;
 
+
+                    case 9:
+                        Console.WriteLine("Would you like to " + "\n1.person count in city\n2.person count in state  ");
+                        int check = Convert.ToInt32(Console.ReadLine());
+                        switch (check)
+                        {
+                            case 1:
+                                Console.WriteLine("Enter city name to find count of person ");
+                                string CityName = Console.ReadLine();
+                                add.GetPersonCountByCity(CityName, BookName);
+                                break;
+                            case 2:
+                                Console.WriteLine("Enter city name to find count of person ");
+                                string StateName = Console.ReadLine();
+                                add.GetPersonCountByState(StateName, BookName);
+                                break;
+                        }
+                        break;
+
                 }
             } while (choice != 0);
         }
