@@ -37,7 +37,8 @@ namespace AddressBook23
                 Console.WriteLine("Working On {0} AddressBook", BookName);
                 Console.WriteLine("choice an option \n1.AddContact\n2.Edit Contact\n3.DeleteContact\n4.ViewContact\n" +
                     "5.View All COntact\n6.Add New AddressBook\n7.Swich addressBook" +
-                    "\n8.Find person from city/state\n9.Get person count in city/state\n10.Get person sort by alphabetically\n0.Exit");
+                    "\n8.Find person from city/state\n9.Get person count in city/state\n10.Get person sort by alphabetically" +
+                    "\n11.Get person sort by City/State/Zip\n12.Read and write file\n0.Exit");
                 choice = Convert.ToInt32(Console.ReadLine());
 
                 switch (choice)
@@ -164,9 +165,22 @@ namespace AddressBook23
                                 break;
                         }
                         break;
-
+                    case 12:
+                        Console.WriteLine("1.Write person contact in file\n2.Read Address book file");
+                        int op = Convert.ToInt32(Console.ReadLine());
+                        switch (op)
+                        {
+                            case 1:
+                                add.WritePersonContact(BookName);
+                                break;
+                            case 2:
+                                add.ReadAddressBook();
+                                break;
+                        }
+                        break;
 
                 }
+
             } while (choice != 0);
         }
     }

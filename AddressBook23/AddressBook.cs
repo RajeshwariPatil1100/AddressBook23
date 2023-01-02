@@ -235,7 +235,30 @@ namespace AddressBook23
                 Console.WriteLine(contact);
             }
         }
+        public void WritePersonContact(string bookname)
+        {
+            List<Contact> cont = addressBookDic[bookname].addressbook.Values.ToList();
+            string path = @"C:\Users\admin\source\repos\RFP232\AddresBookDay23\AddressBook\file.txt";
+            using (StreamWriter writer = new StreamWriter(path))
+            {
+                foreach (var add in addressBookDic.Values)
+                {
+                    foreach (Contact address in add.addressbook.Values)
+                    {
+                        writer.WriteLine(address.ToString());
+                    }
+                }
+            }
+        }
+        public void ReadAddressBook()
+        {
+            string path = @"C:\Users\admin\source\repos\RFP232\AddresBookDay23\AddressBook\file.txt";
+            string lines;
+            lines = File.ReadAllText(path);
+            Console.WriteLine(lines);
 
+
+        }
     }
 }
 
